@@ -1,0 +1,28 @@
+The Healthy Pharmacy needs software to manage employee information
+
+There are 4 types of employees. they all have an employee ID, First and Last name, and hourly rate.
+The pharmacy manager also has the quality of being a leader.
+The staff pharmacist and the pharmacy manager both are licensed. The pharmacy manager is a type of pharmacist.
+The senior technician has a service award.
+The staff technician has a degree as well as the senior technician because he is a type of technician. 
+
+5 classes need to be created to be created to store these informations. 
+	employee which they will all be a type of employee
+		staff pharmacist
+			pharmacy manager
+		staff technician
+			senior technician
+
+there must also be a driver class
+
+the program must take information from a text file to get the employee info.
+based on their job ID it will sort them into the corresponding classes.
+This will also determine their hourly rate.
+
+A method will print out their information.
+
+Their hours will be saved after entered.
+
+Their paychecks can be calculated after their hours are enetered and this will be printed out. 
+
+The program will exit when instructed.

@@ -11,6 +11,7 @@ public class Driver
 		List<staffPharmacist> staffPharmacists = new ArrayList<staffPharmacist>();
 		List<staffTechnician> staffTechnicians = new ArrayList<staffTechnician>();
 		List<seniorTechnician> seniorTechnicians = new ArrayList<seniorTechnician>();
+		int hours = 0;
 		boolean keepGoing = true;
 		while(keepGoing == true)
 		{
@@ -103,11 +104,20 @@ public class Driver
 				{
 					Scanner userChoice3 = new Scanner(System.in);
 					System.out.println("Please enter hours worked: ");
-					int hours = userChoice3.nextInt();	
+					hours = userChoice3.nextInt();	
 				}
 				else if (choice2 == 3)
 				{
 					// calculate paycheck
+					if (hours = 0)
+					{
+						System.out.println("Please enter the hours worked (Option #2) before trying to calculate the paycheck amounts!");
+						choice2 = 2;
+					}
+					else
+					{
+						
+					}
 				}
 				else if (choice2 == 4)
 				{
