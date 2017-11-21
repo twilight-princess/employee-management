@@ -9,7 +9,7 @@ public class pharmacyManager extends staffPharmacist
 	
 	public String getInfo()
   {
-    return ("ID: " + employeeId + "Name: " + firstName + " " + lastName + "Rate: " + hourlyRate + " Licensed: " + licensed + " Leadership: " + leadership);
+		return ("ID: " + employeeId + "Name: " + firstName + " " + lastName + "Rate: " + hourlyRate + " Licensed: " + licensed + " Leadership: " + leadership);
   }
 }
 

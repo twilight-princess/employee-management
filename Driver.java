@@ -32,24 +32,24 @@ public class Driver
           while (line != null)
           {
           	String employeeInfo[] = line.split(",");
-            String jobId = (employeeInfo[0]);
+            int jobId = Integer.parseInt(employeeInfo[0]);
             int employeeId = Integer.parseInt(employeeInfo[1]);
             String firstName = employeeInfo[2];
             String lastName = employeeInfo[3];
             double hourlyRate = 0.00;
-            if (jobId == "1")
+            if (jobId == 1)
             {
             	hourlyRate = 50.00;
 							pharmacyManager newPManager = new pharmacyManager(employeeId, firstName, lastName, hourlyRate);
             	pharmacyManagers.add(newPManager);
 						}
-            else if (jobId == "2")
+            else if (jobId == 2)
             {
             	hourlyRate = 40.00;
             	staffPharmacist newSPharmacist = new staffPharmacist(employeeId, firstName, lastName, hourlyRate);
 							staffPharmacists.add(newSPharmacist);
 						}
-            else if (jobId == "3")
+            else if (jobId == 3)
             {
             	hourlyRate = 20.00;
 							staffTechnician newSTechnician = new staffTechnician(employeeId, firstName, lastName, hourlyRate);
@@ -82,10 +82,21 @@ public class Driver
 				int choice2 = userChoice2.nextInt();
 				if (choice2 == 1)
 				{	
+					for(pharmacyManager employee : pharmacyManagers)
+					{
+						System.out.println(employee.getInfo());
+					}
+					for(staffPharmacist employee : staffPharmacists)
+					{	
+						System.out.println(employee.getInfo());
+					}
 					for(staffTechnician employee : staffTechnicians)
 					{
 						System.out.println(employee.getInfo());
-						System.out.println("staffTechnicians.get(i).getInfo()");
+					}
+					for(seniorTechnician employee : seniorTechnicians)
+					{
+						System.out.println(employee.getInfo());
 					}
 				}
 				else if (choice2 == 2)
