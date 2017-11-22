@@ -4,6 +4,7 @@ public class Employee
 	public String firstName;
 	public String lastName;
 	public double hourlyRate;
+	public int hours = 0;
 
 	public Employee()
 	{
@@ -21,6 +22,11 @@ public class Employee
 	public String getInfo()
 	{
 		return ("ID: " + employeeId + " Name: " + firstName + " " + lastName + " Rate: " + hourlyRate);
+	}
+	
+	public String getPaycheck(int hours)
+	{
+		return ("ID: " + employeeId + " Check Amount: " + (hourlyRate * hours));
 	}
 }
 
