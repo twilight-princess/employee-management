@@ -1,3 +1,9 @@
+// Honor Pledge: I pledge that I have neither 
+// // given nor receieved any help on this assignment.
+// // 
+// //
+// // daelevan
+
 public class seniorTechnician extends staffTechnician 
 {
 	public boolean serviceAward = true;

@@ -1,3 +1,9 @@
+// Honor Pledge: I pledge that I have neither 
+// given nor receieved any help on this assignment.
+//  
+// 
+// daelevan
+
 import java.io.*;
 import java.util.*;
 
@@ -5,6 +11,7 @@ public class Driver
 {
 	public static void main(String [] args)
 	{
+		// creating array lists for types of employees
 		List<pharmacyManager> pharmacyManagers = new ArrayList<pharmacyManager>();
 		List<staffPharmacist> staffPharmacists = new ArrayList<staffPharmacist>();
 		List<staffTechnician> staffTechnicians = new ArrayList<staffTechnician>();
@@ -13,21 +20,26 @@ public class Driver
 		boolean keepGoing = true;
 		while(keepGoing == true)
 		{
+			// presents the first menu to the user
 			System.out.println("1. Load Employees (From File)");
 			System.out.println("2. Exit Program");	
 			Scanner userChoice = new Scanner(System.in);
 			System.out.println("Enter your selection: ");
+			// sets the choice to go through the menu
 			int choice = userChoice.nextInt();
 			if (choice == 1)
 			{
 				try
         { 
+					// loads the txt file
         	InputStream inputStream = new FileInputStream("employees.txt");
           InputStreamReader reader = new InputStreamReader(inputStream);
           BufferedReader buffer = new BufferedReader(reader);
           // gets the first line in the file
           String line = buffer.readLine();
-          line = buffer.readLine();
+          // skips the first line in the text file
+					line = buffer.readLine();
+					// while the line isn't empty it sets the employees to their array lists
           while (line != null)
           {
           	String employeeInfo[] = line.split(",");
@@ -36,6 +48,7 @@ public class Driver
             String firstName = employeeInfo[2];
             String lastName = employeeInfo[3];
             double hourlyRate = 0.00;
+						// sets them to their array list and sets their hourly rate
             if (jobId == 1)
             {
             	hourlyRate = 50.00;
@@ -61,7 +74,6 @@ public class Driver
 							seniorTechnicians.add(newSenTechnician);
             }
 
-						//Employee newEmployee = new Employee(employeeId, firstName, lastName, hourlyRate);
             line = buffer.readLine();
             }
             buffer.close();
@@ -70,7 +82,7 @@ public class Driver
           {
             System.err.println(ex);
           }
-
+				// starts the second menu
 				boolean keepGoing2 = true;
 				while(keepGoing2 == true)
 				{	
@@ -83,6 +95,7 @@ public class Driver
 				int choice2 = userChoice2.nextInt();
 				if (choice2 == 1)
 				{	
+					// loops through and prints out each type of employee 
 					for(pharmacyManager employee : pharmacyManagers)
 					{
 						System.out.println(employee.getInfo());
@@ -100,6 +113,7 @@ public class Driver
 						System.out.println(employee.getInfo());
 					}
 				}
+				//saves the hours worked for all employees
 				else if (choice2 == 2)
 				{
 					Scanner userChoice3 = new Scanner(System.in);
@@ -115,6 +129,7 @@ public class Driver
 						System.out.println("Please enter the hours worked (Option #2) before trying to calculate the paycheck amounts!");
 						choice2 = 2;
 					}
+					// prints our paychecks
 					else
 					{
 						for(pharmacyManager employee : pharmacyManagers)
@@ -135,6 +150,7 @@ public class Driver
 						}
 					}
 				}
+				//stops both menus
 				else if (choice2 == 4)
 				{
 					keepGoing = false;
